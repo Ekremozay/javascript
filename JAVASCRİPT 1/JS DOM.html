@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS DOM</title>
+    <link rel="stylesheet" href="JS%20DOM%20for%20CSS.css">
+</head>
+<body>
+<div id="blok">Bu blok için arka plan rengi turuncu olucak</div>
+<br>
+<br>
+
+<div class="sari">Benim rengim sarı</div>
+<div>ben reksiz bir öğeyim</div>
+<div class="sari">Benim rengim sarı</div>
+<div>ben reksiz bir öğeyim</div>
+<div class="sari">Benim rengim sarı</div>
+<div>ben reksiz bir öğeyim</div>
+<div>ben reksiz bir öğeyim</div>
+<p>Bu paragraf mavi olucak</p>
+<div>Bu bir div etiketi</div>
+<div>Bu bir div etiketi</div>
+<p>Bu paragraf mavi olucak</p>
+<div>Bu bir div etiketi</div>
+<p>Bu paragraf mavi olucak</p>
+<br>
+<div id="kutu"> Bana JS ile stil atancak</div>
+
+<div class="sec">Bu div sinif olucak</div>
+<div>Bu div normal kalacak</div>
+<div class="sec">Bu div sinif olucak</div>
+<br><br>
+
+<a id="link" href="https://www.google.com.tr/">Sayfaya Git</a><br>
+
+
+
+
+
+<script>
+
+    var link = document.getElementById("link");
+    link.setAttribute("target" , "_blank");
+    //link.removeAttribute(""href); Link gözükmez !!!
+    document.write(link.getAttribute("href") +"<br>");
+
+    //document.write(link.getAttribute("href") +"<br>");
+    document.write(link.getAttribute("target"));
+
+
+
+
+
+
+    var kutu = document.getElementsByClassName("sec");
+    kutu[0].classList.add("kutu");
+    kutu[1].classList.add("kutu");
+
+
+
+
+    var div = document.getElementById("kutu");
+    div.style.width = "200px";
+    div.style.height= "200px";
+    div.style.backgroundColor = "yellow";
+
+    var blok = document.getElementById("blok");
+    blok.style.background = "orange";
+
+    var sinif = document.getElementsByClassName("sari");
+    console.log(sinif.length + " adet bu sınıftan mevcut");
+
+    var paragraf = document.getElementsByTagName("p");
+    console.log(document.getElementsByTagName("p") [0]);
+    for (var p in paragraf) {
+        paragraf[p].style.background = "blue";
+        paragraf[p].style.color = "white";
+    }
+
+
+
+</script>
+</body>
+</html>

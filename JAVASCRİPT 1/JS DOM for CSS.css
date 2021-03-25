@@ -1,0 +1,10 @@
+.sari{
+    background-color: yellow;
+}
+.kutu{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 10px;
+    box-shadow: 1px 2px 3px #ef8516;
+}
