@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Dom Manüpülasyon</title>
+</head>
+<body>
+
+<div id = "kapsayici">
+
+    <h2 id="baslik">Başlık</h2>
+    <p id="yazi">Yeni ögenin içerik yazısı</p>
+</div>
+
+<p id="paragraf"> Bu yazının içeriğine innerHTML ile değişim yapılıcak</p>
+
+<button onclick="pencere()">Tıkla</button>
+
+    <div id="blok" onmouseover="renkDegis(this.id)" onmouseout="('Renk değiştirildi')"> Merhaba benim üstüme gelice kırmızı olurum.
+    </div>
+
+    <input type="text" onkeydown="not1.innerHTML = 'bir tuş aşağıya doğru basıldı.'" onkeyup="not2.innerHTML= 'aynı tuş yukarı doğru çıktı'"
+    placeholder="Bir tuşa basılı tutup bırakın">
+    <div id="not1"></div>
+    <div id="not2"></div>
+
+
+
+
+   <script>
+
+       var not1 = document.getElementById("not1");
+       var not2 = document.getElementById("not2");
+
+
+
+
+       function renkDegis(id) {
+           var tag = document.getElementById(id);
+           tag.style.backgroundColor = "red";
+           tag.style.color= "white";
+       }
+
+
+
+
+
+
+
+       function pencere() {
+           alert("Butona Tıklandı")
+
+       }
+    var p = document.getElementById("paragraf");
+    console.log(p.innerHTML);
+    p.innerHTML = ("Paragraf içeriğini değiştirdik.");
+    console.log(p.innerHTML);
+
+
+
+
+
+
+
+
+    var div = document.getElementById("kapsayici");
+    var p = document.getElementById("yazi");
+
+    div.removeChild(p);
+
+    var italik = document.createElement("i");
+    var degistir = document.createTextNode("İçerik değişti");
+
+    italik.appendChild(degistir);
+    div.replaceChild(italik , p );
+
+
+
+
+
+
+
+
+
+
+        var elaman = document.createElement("div");
+        var elemanIcerik = document.createTextNode("Yeni ögenin içerik yazısı");
+        elaman.appendChild(elemanIcerik);
+        document.body.appendChild(elaman);
+
+   </script>
+
+</body>
+</html>
