@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Zamanlayıcılar</title>
+</head>
+<body>
+<script>
+    function merhabaDe() {
+        document.write("3 saniye geçti ve ben ekranda belirdim.")
+    }
+    setTimeout(merhabaDe,3000);
+
+    var sayi = 1 ;
+    function arttir() {
+        sayi++;
+        document.write(sayi + "<br>");
+    }
+    setInterval(arttir,2000);
+
+</script>
+
+</body>
+</html>

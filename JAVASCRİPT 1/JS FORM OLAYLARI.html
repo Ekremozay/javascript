@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS FORM OLAYLARI</title>
+</head>
+<body onload="alert('Merhaba ziyaretçi sayfama hoşgeldin ');">
+
+<input id="isim" type="text" onfocus="odaklan(this.id)" onblur="odakdegis(this.id)" placeholder="İsim">
+<input id="soyisim" type="text" onfocus="odaklan(this.id)" onblur="odakdegis(this.id)" placeholder="Soyisim">
+<input id="yas" type="text" onfocus="odaklan(this.id)" onblur="odakdegis(this.id)" placeholder="Yaş">
+
+<select id="secim" onchange="alert('Seçim Değişti!')">
+    <option>Seçim 1</option>
+    <option>Seçim 2</option>
+    <option>Seçim 3</option>
+    <option>Seçim 4</option>
+    <option>Seçim 5</option>
+</select>
+
+<form action="JS%20FORM%20OLAYLARI.php" method="post" onsubmit="return kontrolEt()">
+    <input id="isimf" type="text" placeholder="İsim"> <br>
+    <input id="soyisimf" type="text" placeholder="Soyisim"><br>
+    <button type="submit">Gönder</button>
+    <button type="reset">Sıfırla</button>
+</form>
+<div id="sonuc"></div>
+
+
+
+
+
+<script>
+
+    var kullanici = prompt("Adınız Soyadınız nerdir ?");
+    if (kullanici.length > 0 && kullanici !="null"){
+        document.write("Merhaba, " + kullanici + "<br>");
+    }else{
+        document.write("Merhaba Ziyaretçi");
+    }
+
+
+
+
+    function pencereBoyutları() {
+        var genislik = window.outerWidth;
+        var yükseklik = window.outerHeight;
+
+        document.getElementById("sonuc").innerHTML= "Pencere genişliği : " + genislik + "Pencere Yüksekliği : " + yükseklik;
+        return(pencereBoyutları);
+
+    }
+    window.onresize= pencereBoyutları();
+
+    var sonuc1 = confirm("Onay vermeniz gerekiyor");
+
+    if(sonuc1 == true){
+        document.write("Sözleşmeyi onyladınız");
+    }else {
+        document.write("Sözleşmeyi onaylamaktan vazgeçtiniz !");
+    }
+
+
+
+
+
+
+
+
+
+    function kontrolEt() {
+        var isim = document.getElementById("isimf");
+        var soyisim = document.getElementById("soyisimf")
+
+        if(isim.value ==""){
+            alert("İsim alanını boş bıraktınız");
+            isim.focus();
+            return false;
+        }
+        if(soyisim.value ==""){
+            alert("Soyisim alanını boş bıraktınız");
+            soyisim.focus();
+            return false;
+        }
+        return true;
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function odaklan(id) {
+        var tag = document.getElementById(id);
+        tag.style.backgroundColor= "yellow";
+    }
+    function odakdegis(id) {
+        var tag = document.getElementById(id);
+        tag.style.backgroundColor = "lightgray";
+
+    }
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
